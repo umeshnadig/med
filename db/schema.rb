@@ -11,13 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160613082504) do
+ActiveRecord::Schema.define(version: 20160615095629) do
 
   create_table "appointments", force: :cascade do |t|
     t.datetime "time"
     t.integer  "referenceid"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.date     "date"
+    t.boolean  "is_first"
   end
 
 end

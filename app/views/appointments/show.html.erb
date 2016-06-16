@@ -1,13 +1,27 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Date:</strong>
+  <%= @appointment.date %>
+</p>
+
+<p>
   <strong>Time:</strong>
-  <%= @appointment.time %>
+  <%= @appointment.time.to_s(:time) %>
 </p>
 
 <p>
   <strong>Referenceid:</strong>
   <%= @appointment.referenceid %>
+</p>
+
+<p>
+  <strong>First Appointment:</strong>
+  <%= if @appointment.is_first %>
+  Yes
+  <%else%>
+  No
+  <%end%>
 </p>
 
 <%= link_to 'Edit', edit_appointment_path(@appointment) %> |
