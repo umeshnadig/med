@@ -17,11 +17,7 @@
 
 <p>
   <strong>First Appointment:</strong>
-  <%= if @appointment.is_first %>
-  Yes
-  <%else%>
-  No
-  <%end%>
+  <%= @appointment.is_first %>
 </p>
 
 <%= link_to 'Edit', edit_appointment_path(@appointment) %> |
