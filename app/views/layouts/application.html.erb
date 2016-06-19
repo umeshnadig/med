@@ -30,15 +30,30 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	 <ul class="nav navbar-nav">
-	         <li class="active"><%= link_to 'Patients', patients_path %></li>
-	         <li><a href="#">Link</a></li>
 	         <li class="dropdown">
 				 <%= link_to patients_path, data:{toggle:"dropdown"}, role:"button",'aria-expanded':"false", 'aria-haspopup':"true", :class=>"dropdown-toggle" do %>
 				 	Patients <span class="caret"></span>
 				 <% end %>
 	           <ul class="dropdown-menu">
-	             <li><a href="#">Search</a></li>
-	             <li><a href="#">Add</a></li>
+	             <li>
+					 <%= link_to "Search", patients_path %>
+				 </li>
+	             <li>
+					 <%= link_to 'Add New', new_patient_path %>
+				 </li>
+	           </ul>
+	         </li>
+	         <li class="dropdown">
+				 <%= link_to appointments_path, data:{toggle:"dropdown"}, role:"button",'aria-expanded':"false", 'aria-haspopup':"true", :class=>"dropdown-toggle" do %>
+				 	Appointments <span class="caret"></span>
+				 <% end %>
+	           <ul class="dropdown-menu">
+	             <li>
+					 <%= link_to 'Search', appointments_path %>
+				 </li>
+	             <li>
+					 <%= link_to 'Add New', new_appointment_path %>
+				 </li>
 	           </ul>
 	         </li>
 	       </ul>

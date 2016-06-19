@@ -1,11 +1,19 @@
 <p id="notice"><%= notice %></p>
 
 <div class="panel panel-default">
+	<%= form_tag(patients_path, :method => 'get', :id => 'search_form') do %>
+		<%= text_field_tag :search, params[:search], placeholder: 'Search Patients' %>
+		<%= submit_tag "Search", :name => nil %>
+	<% end %>
+</div>
+
+<div class="panel panel-default">
 	<!-- Default panel contents -->
 	<div class="panel-heading">
 		Listing Patients
 	</div>
 
+	<% if @patients.present? %>
 	<table class="table table-condensed table-striped  table-hover table-bordered">
 		<thead>
 			<tr>
@@ -39,6 +47,10 @@
 			 <% end %>
 		 </tbody>
 	 </table>
+	 
+	 <% else %>
+	   <p>There are no patients containing the first name <%= params[:search] %>.</p>
+	 <% end %>
  </div>
 
 

@@ -7,7 +7,7 @@
 
 <p>
   <strong>Time:</strong>
-  <%= @appointment.time.to_s(:time) %>
+  <%= @appointment.time.strftime('%I:%M %P') %>
 </p>
 
 <p>

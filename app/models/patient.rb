@@ -7,4 +7,10 @@ class Patient < ActiveRecord::Base
   def address
     [street, city].join(', ')
   end
+  
+  def self.search(search)
+    where("first_name LIKE ?", "%#{search}%")
+  end
+
+  
 end
