@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160615095629) do
+ActiveRecord::Schema.define(version: 20160619031533) do
 
   create_table "appointments", force: :cascade do |t|
     t.datetime "time"
@@ -20,6 +20,23 @@ ActiveRecord::Schema.define(version: 20160615095629) do
     t.datetime "updated_at",  null: false
     t.date     "date"
     t.boolean  "is_first"
+  end
+
+  create_table "patients", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "cell_phone"
+    t.string   "alt_phone"
+    t.string   "email"
+    t.string   "street"
+    t.string   "city"
+    t.string   "state"
+    t.string   "country"
+    t.date     "dob"
+    t.date     "registration_on"
+    t.integer  "reference_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
 end
