@@ -7,8 +7,37 @@ class PatientsController < ApplicationController
     @patients = Patient.all
     if params[:search]
       @patients = Patient.search(params[:search]).order("created_at DESC")
+    elsif params[:term]
+       @patients = Patient.order(:first_name).where("first_name like ?", "%#{params[:term]}%")
+       render json: get_patient_info(@patients)
     else
       @patients = Patient.all.order("created_at DESC")
+    end
+  end
+  
+  def get_patient_info(patients)
+    patientinfo = Array.new
+    for p in patients
+      pat = PatientInfo.new
+      pat.label(p.full_name)
+      pat.value(p.id)
+      patientinfo.append(pat)
+    end
+    patientinfo
+  end
+  
+  class PatientInfo
+    def label
+      @label
+    end
+    def label(name)
+      @label = name
+    end
+    def value
+      @value
+    end
+    def value(id)
+      @value = id
     end
   end
 

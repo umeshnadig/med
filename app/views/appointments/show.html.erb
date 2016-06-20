@@ -1,24 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Date:</strong>
+<div class="form-group">
+  <label for="Date" class="col-sm-2 control-label">Date:</label>
   <%= @appointment.date %>
-</p>
+</div>
 
-<p>
-  <strong>Time:</strong>
+<div class="form-group">
+  <label for="Time" class="col-sm-2 control-label">Time:</label>
   <%= @appointment.time.strftime('%I:%M %P') %>
-</p>
+</div>
 
-<p>
-  <strong>Referenceid:</strong>
-  <%= @appointment.referenceid %>
-</p>
+<div class="form-group">
+  <label for="Patient" class="col-sm-2 control-label">Patient:</label>
+  <%= @appointment.patient.full_name %>
+</div>
 
-<p>
-  <strong>First Appointment:</strong>
+<div class="form-group">
+  <label for="FirstAppointment" class="col-sm-2 control-label">First Appointment:</label>
   <%= @appointment.is_first %>
-</p>
+</div>
 
 <%= link_to 'Edit', edit_appointment_path(@appointment) %> |
 <%= link_to 'Back', appointments_path %>
