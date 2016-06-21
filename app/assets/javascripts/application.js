@@ -17,3 +17,23 @@
 //= require jquery.timepicker.js
 //= require_tree .
 
+	var tour = new Tour({
+	  steps: [
+	  {
+	    element: "#patients_menu",
+	    title: "Click here for creating patients",
+	    content: "Click the menu item to see the options available"
+	  },
+	  {
+	    element: "#appointments_menu",
+	    title: "Click here for creating appointments",
+	    content: "Click the menu item to see the options available"
+	  }
+	]});
+
+	// Initialize the tour
+	tour.init();
+
+	$(function() {
+		$("#helpbutton").on("click", function() { tour.start(true);})
+	});

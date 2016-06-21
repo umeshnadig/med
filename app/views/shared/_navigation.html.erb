@@ -15,7 +15,7 @@
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
 				<li class="dropdown">
-					<%= link_to patients_path, data:{toggle:"dropdown"}, role:"button",'aria-expanded':"false", 'aria-haspopup':"true", :class=>"dropdown-toggle" do %>
+					<%= link_to patients_path, data:{toggle:"dropdown"}, role:"button",'aria-expanded':"false", 'aria-haspopup':"true", :class=>"dropdown-toggle", :id => 'patients_menu' do %>
 					Patients <span class="caret"></span>
 					<% end %>
 					<ul class="dropdown-menu">
@@ -28,7 +28,7 @@
 					</ul>
 				</li>
 				<li class="dropdown">
-					<%= link_to appointments_path, data:{toggle:"dropdown"}, role:"button",'aria-expanded':"false", 'aria-haspopup':"true", :class=>"dropdown-toggle" do %>
+					<%= link_to appointments_path, data:{toggle:"dropdown"}, role:"button",'aria-expanded':"false", 'aria-haspopup':"true", :class=>"dropdown-toggle" , :id => 'appointments_menu' do %>
 					Appointments <span class="caret"></span>
 					<% end %>
 					<ul class="dropdown-menu">
@@ -42,7 +42,7 @@
 				</li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#">Link</a></li>
+				<li><button type=button class="btn btn-default" id="helpbutton">Help</li>
 				<li><button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
 					Launch demo modal
 				</button></li>
