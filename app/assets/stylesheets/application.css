@@ -15,4 +15,6 @@
  *= require jquery-ui
  *= require jquery-ui/datepicker
  *= require jquery.timepicker
+ *= require boostrap.min
+ *= require boostrap-tour
  */
