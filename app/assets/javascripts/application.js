@@ -10,13 +10,13 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require bootstrap.min.js
-//= require bootstrap-tour.js
 //= require jquery
 //= require jquery-ui
 //= require jquery_ujs
 //= require jquery-ui/datepicker
 //= require jquery.timepicker.js
+//= require bootstrap.min.js
+//= require bootstrap-tour.js
 //= require_tree .
 
 	var tour = new Tour({
