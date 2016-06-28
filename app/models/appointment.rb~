@@ -15,4 +15,5 @@ class Appointment < ActiveRecord::Base
       self.patient_id = Patient.create({:first_name => @patient_name}).id;
     end
   end
+
 end
