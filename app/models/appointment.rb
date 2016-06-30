@@ -5,8 +5,8 @@ class Appointment < ActiveRecord::Base
   attr_accessor :patient_name
 
   after_initialize do |appointment|
-      appointment.date = Date.today + 1
-      appointment.time = Time.parse("8:00")
+      appointment.date = appointment.date || Date.today + 1
+      appointment.time = appointment.time || Time.parse("13:30")
   end
 
   def patient_name
