@@ -1,0 +1,20 @@
+<%= form_for(appointment) do |f| %>
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+        <h3>New Patient</h3>
+        <p>
+				  <%= f.text_field :date, :class=>'form-control'%>
+				</p>
+        <p>
+					<div class="row">
+						<div class="col-sm-6 col-md-6">
+							<%= f.submit "Quick Create", class: "btn btn-default"%>
+						</div>
+						<div class="col-sm-6 col-md-6">
+							<%= link_to 'New Appointment', new_appointment_path , class: "btn btn-default pull-right" %>
+						</div>
+					</div>
+				</p>
+      </div>
+</div>
+<% end %>

@@ -1,18 +1,31 @@
-<ul class="list-group">
-  <li class="list-group-item">
-    <span class="badge">14</span>
-    Cras justo odio
-  </li>
-</ul>
-<ul class="list-group">
-  <li class="list-group-item">
-    <span class="badge">14</span>
-    Cras justo odio
-  </li>
-</ul>
-<ul class="list-group">
-  <li class="list-group-item">
-    <span class="badge">14</span>
-    Cras justo odio
-  </li>
-</ul>
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="panel panel-primary">
+      <div class="panel-heading text-center">
+        Today's appointments
+        <h1 clas="center">25</h1>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-md-4">
+    <div class="panel panel-primary">
+      <div class="panel-heading text-center">
+        Today's appointments
+        <h1 clas="center">25</h1>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-md-4">
+    <div class="panel panel-primary">
+      <div class="panel-heading text-center">
+        Today's appointments
+        <h1 clas="center">25</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+  <%= render partial:"appointments/quick_create", locals:{appointment:@appointment} %>
+</div>
