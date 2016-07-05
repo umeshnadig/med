@@ -3,6 +3,7 @@ class Appointment < ActiveRecord::Base
   belongs_to :patient
   validates :date, :time, presence: true
   attr_accessor :patient_name
+  scope :for_today, -> {where(date: Date.today)}
 
   after_initialize do |appointment|
       appointment.date = appointment.date || Date.today + 1

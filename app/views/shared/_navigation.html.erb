@@ -8,7 +8,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#">Med</a>
+			<%=link_to 'Med', root_path, class:'navbar-brand'%>
 		</div>
 
 		<!-- Collect the nav links, forms, and other content for toggling -->
@@ -42,8 +42,15 @@
 				</li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li><button type=button class="btn btn-default" id="helpbutton">Help</li>
-				<li><button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+				<li><button type=button class="btn btn-link" id="helpbutton">Help</li>
+					<li>
+						<%= form_tag(patients_path,:class=>'navbar-form navbar-left', :method => 'get', :id => 'search_form') do %>
+							<%= text_field_tag :search, params[:search], placeholder: 'Search Patients', :class => 'form-control' %>
+							<%= submit_tag "Search", :name => nil, :class => 'btn btn-primary btn-lg' %>
+						<% end %>
+					</li>
+
+				<li><button type="button" class="btn" data-toggle="modal" data-target="#myModal">
 					Launch demo modal
 				</button></li>
 			</ul>

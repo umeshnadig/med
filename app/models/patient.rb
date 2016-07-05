@@ -9,7 +9,7 @@ class Patient < ActiveRecord::Base
   end
   
   def self.search(search)
-    where("first_name LIKE ?", "%#{search}%")
+    where("lower(first_name) LIKE ?", "%#{search.downcase}%")
   end
 
   
